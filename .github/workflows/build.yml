@@ -50,9 +50,10 @@ jobs:
           echo "echo "IMAGE_TAG - $IMAGE_TAG"
       - name: Build new image name
         run: |
-          IMAGE_NAME="${{ env.IMAGE_PATH }}:${{ env.TAG }}"
+          IMAGE_NAME="${{ env.IMAGE_PATH }}:${{ env.IMAGE_TAG }}"
           echo "IMAGE_NAME - $IMAGE_NAME"
           echo "IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_ENV
+          env.IMAGE_NAME=$IMAGE_NAME
       - name: Print GitHub environment
         run: |
           echo $GITHUB_ENV
@@ -60,4 +61,5 @@ jobs:
           echo "-------------------------"
           echo "echo "IMAGE_PATH - $IMAGE_PATH"
           echo "echo "IMAGE_TAG - $IMAGE_TAG"
+          echo "IMAGE_NAME - $IMAGE_NAME"
 
