@@ -1,6 +1,5 @@
 name: Docker-push
 on:
-  push:
   release:
     # Publish tagged image.
     types: [published]
